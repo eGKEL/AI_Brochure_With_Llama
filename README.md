@@ -43,7 +43,6 @@ Just provide a URL, and the notebook will:
 ## 📂 Files
 
 * `brochure_generator.ipynb` – the main notebook
-* `requirements.txt` – Python dependencies
 
 ---
 
