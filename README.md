@@ -1,116 +1,81 @@
-## 🛰️ EuroSAT Image Classification Model
+# ✨ Restormer – Image Restoration Notebook (Colab)
 
-Deep learning model for satellite image classification using the EuroSAT (RGB) dataset.
-Fully TensorFlow/Keras, GPU-ready, and designed to run smoothly in Google Colab.
-
-📚 Overview
-
-This project includes everything required to classify EuroSAT satellite images into 10 land-use categories using a trained TensorFlow model.
-
-Included files:
-
-eurosat_model.h5 — trained TensorFlow model (your working model4)
-
-EuroSAT_Classification.ipynb — simple notebook for running predictions
-
-README.md — documentation
-
-This notebook supports:
-
-✔ Uploading the model in Colab
-✔ Uploading a single image
-✔ Viewing the prediction with confidence
-✔ Viewing all 10 class probabilities
-✔ Visual preview of the uploaded image
-
-## 📁 Folder Structure
-
-```
-eurosat_classifier/
-│
-├── eurosat_model.h5               # Trained TensorFlow model (64×64 input)
-├── EuroSAT_Classification.ipynb   # Notebook for single-image prediction
-└── README.md                      # Documentation
-```
-
-
-## 🧠 EuroSAT Classes
-
-The model predicts one of the following 10 land-use categories:
-
-- **AnnualCrop**
-- **Forest**
-- **HerbaceousVegetation**
-- **Highway**
-- **Industrial**
-- **Pasture**
-- **PermanentCrop**
-- **Residential**
-- **River**
-- **SeaLake**
-
-
-## 🚀 Running in Google Colab (Recommended)
-
-1. Upload the project folder to **Google Drive**
-2. Open **EuroSAT_Classification.ipynb** in Google Colab
-3. Go to **Runtime → Change runtime type → GPU**
-4. Run all cells in order
-
-The notebook will guide you through:
-- Uploading the model (`eurosat_model.h5`)
-- Uploading an image for prediction
-- Viewing:
-  - Predicted class
-  - Confidence percentage
-  - Full probability distribution
-  - Image preview
+## 📌 Overview
+This notebook provides a clean and simple workflow for restoring images using the **Restormer** model directly in **Google Colab**.  
+It runs step-by-step with minimal configuration, guiding the user from dependency installation to downloading the final enhanced image.
 
 ---
 
-## 🔧 Model Details
+## 🗂️ Notebook Steps
 
-- **Framework:** TensorFlow / Keras  
-- **Input shape:** `64 × 64 × 3`  
-- **Preprocessing:**  
-  - Resize image to `64 × 64`  
-  - Normalize pixel values to `[0, 1]`  
-- **Output layer:** Softmax with **10 EuroSAT classes**
+### 1️⃣ **Download dependencies**
+Installs all the required Python libraries necessary for running Restormer.  
+Everything is automated; no manual setup required.
 
----
+### 2️⃣ **Define task**
+Allows selecting the restoration task (denoising, deraining, deblurring, etc.).  
+You choose what the model will perform.
 
-## 🖼️ Example Output
+### 3️⃣ **Import Image**
+Upload or load your input image.  
+The notebook prepares it automatically for model inference.
 
-**Prediction:** Industrial *(92.14%)*
+### 4️⃣ **Model preparing**
+Sets up Restormer:
+- Downloads pretrained weights  
+- Loads the correct model variant  
+- Moves it to GPU for faster inference ⚡  
+Zero configuration needed.
 
-AnnualCrop → 0.0012
-Forest → 0.0000
-HerbaceousVegetation → 0.0043
-Highway → 0.0001
-Industrial → 0.9214
-Pasture → 0.0021
-PermanentCrop → 0.0665
-Residential → 0.0017
-River → 0.0002
-SeaLake → 0.0025
+### 5️⃣ **Inference**
+Runs the chosen Restormer task on your image.  
+Produces a clean, restored output.
 
+### 6️⃣ **Image visualization**
+Shows both:
+- 🔍 **Original image**  
+- ✨ **Restored image**  
+…so you can easily compare results inside the notebook.
 
-
-The notebook also displays the uploaded image.
-
----
-
-## 📝 Notes
-
-- Only **.h5 TensorFlow/Keras models** are supported  
-- Input image must be **RGB** (PNG/JPG)  
-- Best performance is on **EuroSAT RGB** images  
-- GPU is recommended but not required  
-- This project uses the verified working model: **model4.h5**
+### 7️⃣ **Download results**
+Lets you download the enhanced final image directly to your device with one click.
 
 ---
 
-## ✔️ Ready to Use
+## 💻 Requirements
+You only need:
+- Google account  
+- Google Colab  
+- GPU runtime (highly recommended)
 
-Upload the model → Upload an image → Get instant predictions  
-No training. No configuration. No headaches.
+Everything else installs automatically inside the notebook.
+
+---
+
+## ⭐ Features
+- One-click simple workflow  
+- GPU-accelerated  
+- High-quality image restoration  
+- Supports multiple Restormer tasks  
+- Clear visualization and export  
+- Beginner-friendly and research-friendly  
+
+---
+
+## 🚀 How to Use
+1. Open the notebook in Google Colab  
+2. Enable GPU (`Runtime → Change runtime type → GPU`)  
+3. Run all cells from top to bottom  
+4. Upload your image in Step 3  
+5. Wait for inference to finish  
+6. Download your final restored image in Step 7
+
+---
+
+## 🖼️ Output
+You’ll get a clean, enhanced, and restored image in high quality, ready for download and further processing.
+
+---
+
+## 🎉 Enjoy the results!
+If you need matching READMEs for GFPGAN, SwinIR, or the full pipeline, feel free to request them.
